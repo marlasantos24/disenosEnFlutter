@@ -16,7 +16,8 @@ class BotonesPage extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                _titulos()
+                _titulos(),
+                _botonesRedondeados()
               ],
             ),
           )
@@ -111,5 +112,60 @@ class BotonesPage extends StatelessWidget {
         ],
         )
       );
+  }
+
+  _botonesRedondeados() {
+    return Table(
+      children: [
+        TableRow(
+          children: [
+           _crearBotonRedondeado(),
+             _crearBotonRedondeado()
+          ]
+        ),
+        TableRow(
+          children: [
+           _crearBotonRedondeado(),
+             _crearBotonRedondeado()
+          ]
+        ),
+        TableRow(
+          children: [
+           _crearBotonRedondeado(),
+             _crearBotonRedondeado()
+          ]
+        ),
+        TableRow(
+          children: [
+           _crearBotonRedondeado(),
+             _crearBotonRedondeado()
+          ]
+        )
+      ],
+    );
+  }
+
+  _crearBotonRedondeado() {
+    return Container(
+      height: 148.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107, 0.7),
+        borderRadius: BorderRadius.circular(20.0)
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          SizedBox(height: 5.0),
+          CircleAvatar(
+            backgroundColor: Colors.pinkAccent,
+            radius: 35.0,
+            child: Icon(Icons.ac_unit, color: Colors.white, size: 30.0),
+          ),
+          Text('Cosa', style: TextStyle(color: Colors.pinkAccent)),
+          SizedBox(height: 5.0)
+        ],
+      ),
+    );
   }
 }
