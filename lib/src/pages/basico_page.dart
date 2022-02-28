@@ -7,43 +7,60 @@ final estiloSubTitulo= TextStyle(fontSize: 18.0, color: Colors.grey );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
           _crearImagen(),
           _crearTitulo(),
           _crearAcciones(),
-          _crearTexto()
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
         ],
+        ),
       )
     );
   }
 
   Widget _crearImagen(){
-    return Image(
-            image: NetworkImage('https://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg'),
-          );
+    return Container(
+      width: double.infinity,
+      child: Image(
+              image: NetworkImage('https://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg'),
+              height: 200.0,
+              fit: BoxFit.cover,
+            ),
+    );
   }
 
   _crearTitulo() {
-    return Container(
-            padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget> [
-                      Text('Lago con girasoles', style: estiloTitulo),
-                      SizedBox(height: 7.0),
-                      Text('Lago en Alemania', style: estiloSubTitulo),
-                    ],
+    return SafeArea(
+      child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget> [
+                        Text('Lago con girasoles', style: estiloTitulo),
+                        SizedBox(height: 7.0),
+                        Text('Lago en Alemania', style: estiloSubTitulo),
+                      ],
+                    ),
                   ),
-                ),
-                Icon(Icons.star, color: Colors.red, size: 30.0 ),
-                Text('41', style: TextStyle(fontSize: 20.0))
-              ],
+                  Icon(Icons.star, color: Colors.red, size: 30.0 ),
+                  Text('41', style: TextStyle(fontSize: 20.0))
+                ],
+              ),
             ),
-          );
+    );
   }
 
   _crearAcciones() {
@@ -71,11 +88,13 @@ final estiloSubTitulo= TextStyle(fontSize: 18.0, color: Colors.grey );
   }
 
   _crearTexto() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-      child: Text(
-        'Et ex duis aute in veniam occaecat incididunt voluptate. Occaecat esse ad ullamco nostrud sint minim aliqua labore adipisicing. Enim ut qui nisi est. Consectetur deserunt et do laborum occaecat exercitation aute nostrud et eu.',
-        textAlign: TextAlign.justify,
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0),
+        child: Text(
+          'Et ex duis aute in veniam occaecat incididunt voluptate. Occaecat esse ad ullamco nostrud sint minim aliqua labore adipisicing. Enim ut qui nisi est. Consectetur deserunt et do laborum occaecat exercitation aute nostrud et eu.',
+          textAlign: TextAlign.justify,
+        ),
       ),
     );
   }
