@@ -27,8 +27,22 @@ class ScrollPage extends StatelessWidget {
   }
 
   _pagina2() {
-    return Center(
-      child: Text('Pagina 2'),
+    return Container(
+      width: double.infinity,
+      height:  double.infinity,
+      color: Color.fromRGBO(108, 192, 218, 1.0),
+      child: Center(
+        child: ElevatedButton(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+            child: Text('Bienvenidos', style: TextStyle(fontSize: 20.0 ),)
+            ),
+          onPressed: (){},
+          style: ElevatedButton.styleFrom(
+            shape: StadiumBorder()
+          )
+          ,)
+      ),
     );
   }
 
